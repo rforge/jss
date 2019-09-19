@@ -236,7 +236,7 @@ add_doi <- function(x, file = "out.bib", minscore = 1.5) {
     dois <- sapply(y, get_doi, minscore = minscore)
     for(i in 1:length(dois)) 
         if(nchar(dois[i]) > 0) y[i]$doi <- dois[i]
-          #or:# y[i]$url <- paste("http://dx.doi.org/", dois[i], sep = "")
+          #or:# y[i]$url <- paste("https://doi.org/", dois[i], sep = "")
     if(is.character(file)) {
       bibtex::write.bib(y, file = file)
       invisible(y)
